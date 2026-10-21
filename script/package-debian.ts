@@ -57,7 +57,7 @@ const options: DebianOptions = {
     'This is the unofficial port of GitHub Desktop for Linux distributions',
   section: 'GNOME;GTK;Development',
   priority: 'extra',
-  homepage: 'https://github.com/Guys-Inc-Public/github-desktop-linux',
+  homepage: 'https://github.com/guysinc-forks/github-desktop-linux',
   depends: [
     // Desktop-specific dependencies
     'libcurl3 | libcurl4',
