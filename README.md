@@ -1,4 +1,4 @@
-<img src="docs/assets/readme-header.svg" alt="Guys Inc" width="100%">
+<img src="docs/assets/readme-header.svg" alt="guysinc-forks · github-desktop-linux: Community-maintained fork of GitHub Desktop with Linux support — active Ubuntu/Debian (.deb) releases" width="100%">
 
 # github-desktop-linux
 
@@ -9,7 +9,24 @@ A community-maintained fork of GitHub Desktop with Linux support and signed Ubun
 ![Docs](https://img.shields.io/badge/docs-reviewed_2026--10--15-22dcb3?style=flat-square&labelColor=0e090f)
 ![Version](https://img.shields.io/badge/version-release--3.5.1--linux1-a984fb?style=flat-square&labelColor=0e090f)
 
-> ## 🐧 Guys Inc — GitHub Desktop for Linux
+## Quickstart
+
+On Ubuntu or Debian, add the signed APT repository and install. `apt` keeps it up
+to date from then on:
+
+```sh
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://apt.guysinc.pub/guysinc-apt.gpg | sudo tee /etc/apt/keyrings/guysinc-apt.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/guysinc-apt.gpg] https://apt.guysinc.pub/github-desktop stable main" | sudo tee /etc/apt/sources.list.d/guysinc-github-desktop.list
+sudo apt update && sudo apt install github-desktop
+```
+
+Check the repository's key against the fingerprint
+`F45B B6D3 4D82 EF56 BB97 FBE0 F305 FB33 592B 46C8`. The
+[install guide](https://guysinc.pub/install.html) walks through the same steps;
+`.rpm` and AppImage are under [Other distributions](#other-distributions).
+
+> **🐧 Guys Inc — GitHub Desktop for Linux**
 >
 > This is an **actively-maintained community fork** that continues the excellent Linux
 > work of [`shiftkey/desktop`](https://github.com/shiftkey/desktop), which has been
@@ -55,18 +72,11 @@ It also publishes [releases](https://github.com/guysinc-forks/github-desktop-lin
  - Debian (`.deb`)
  - RPM (`.rpm`)
 
-## Install on Debian / Ubuntu (recommended)
+## The APT repository
 
-Our **signed APT repository** installs `github-desktop` and keeps it up to date through `apt`:
-
-```sh
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://apt.guysinc.pub/guysinc-apt.gpg | sudo tee /etc/apt/keyrings/guysinc-apt.gpg > /dev/null
-echo "deb [signed-by=/etc/apt/keyrings/guysinc-apt.gpg] https://apt.guysinc.pub/github-desktop stable main" | sudo tee /etc/apt/sources.list.d/guysinc-github-desktop.list
-sudo apt update && sudo apt install github-desktop
-```
-
-The repository is GPG-signed; the fingerprint to verify is
+Our **signed APT repository** at [apt.guysinc.pub](https://apt.guysinc.pub) installs
+`github-desktop` and keeps it up to date through `apt`; the commands are in
+[Quickstart](#quickstart). The fingerprint to verify is
 `F45B B6D3 4D82 EF56 BB97 FBE0 F305 FB33 592B 46C8`.
 
 That is the *primary* key. `gpg --show-keys` will also list signing subkeys — one per
