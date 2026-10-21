@@ -72,7 +72,7 @@ const options: RedhatOptions = {
     post: 'script/resources/rpm/post.sh',
     preun: 'script/resources/rpm/preun.sh',
   },
-  homepage: 'https://github.com/Guys-Inc-Public/github-desktop-linux',
+  homepage: 'https://github.com/guysinc-forks/github-desktop-linux',
   mimeType: [
     'x-scheme-handler/x-github-client',
     'x-scheme-handler/x-github-desktop-auth',
