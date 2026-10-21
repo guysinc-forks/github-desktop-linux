@@ -1,4 +1,32 @@
-> ## 🐧 Guys Inc — GitHub Desktop for Linux
+<img src="docs/assets/readme-header.svg" alt="guysinc-forks · github-desktop-linux: Community-maintained fork of GitHub Desktop with Linux support — active Ubuntu/Debian (.deb) releases" width="100%">
+
+# github-desktop-linux
+
+A community-maintained fork of GitHub Desktop with Linux support and signed Ubuntu and Debian packages.
+
+![Licence](https://img.shields.io/badge/licence-MIT-ff67bd?style=flat-square&labelColor=0e090f)
+![Build](https://github.com/guysinc-forks/github-desktop-linux/actions/workflows/ci-linux.yml/badge.svg)
+![Docs](https://img.shields.io/badge/docs-reviewed_2026--10--15-22dcb3?style=flat-square&labelColor=0e090f)
+![Version](https://img.shields.io/badge/version-release--3.5.1--linux1-a984fb?style=flat-square&labelColor=0e090f)
+
+## Quickstart
+
+On Ubuntu or Debian, add the signed APT repository and install. `apt` keeps it up
+to date from then on:
+
+```sh
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://apt.guysinc.pub/guysinc-apt.gpg | sudo tee /etc/apt/keyrings/guysinc-apt.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/guysinc-apt.gpg] https://apt.guysinc.pub/github-desktop stable main" | sudo tee /etc/apt/sources.list.d/guysinc-github-desktop.list
+sudo apt update && sudo apt install github-desktop
+```
+
+Check the repository's key against the fingerprint
+`F45B B6D3 4D82 EF56 BB97 FBE0 F305 FB33 592B 46C8`. The
+[install guide](https://guysinc.pub/install.html) walks through the same steps;
+`.rpm` and AppImage are under [Other distributions](#other-distributions).
+
+> **🐧 Guys Inc — GitHub Desktop for Linux**
 >
 > This is an **actively-maintained community fork** that continues the excellent Linux
 > work of [`shiftkey/desktop`](https://github.com/shiftkey/desktop), which has been
@@ -8,16 +36,14 @@
 >
 > **⚠️ Unofficial build.** GitHub Desktop for Linux is a community project and is **not affiliated with, endorsed by, or supported by GitHub, Inc.** “GitHub” and “GitHub Desktop” are trademarks of GitHub, Inc. This fork exists solely to provide Linux packages of the MIT-licensed source.
 >
-> - 📦 **Releases:** see the [Releases](https://github.com/Guys-Inc-Public/github-desktop-linux/releases) page
-> - 🐛 **Found a bug?** [Open an issue](https://github.com/Guys-Inc-Public/github-desktop-linux/issues)
+> - 📦 **Releases:** see the [Releases](https://github.com/guysinc-forks/github-desktop-linux/releases) page
+> - 🐛 **Found a bug?** [Open an issue](https://github.com/guysinc-forks/github-desktop-linux/issues)
 > - 🙏 **Credit:** huge thanks to [@shiftkey](https://github.com/shiftkey) and all prior
 >   contributors for years of Linux packaging work this fork builds on.
 
 ---
 
-# GitHub Desktop for Linux
-
-[![CI / Linux](https://github.com/Guys-Inc-Public/github-desktop-linux/actions/workflows/ci-linux.yml/badge.svg)](https://github.com/Guys-Inc-Public/github-desktop-linux/actions/workflows/ci-linux.yml)
+## GitHub Desktop for Linux
 
 [GitHub Desktop](https://desktop.github.com/) is an open-source [Electron](https://www.electronjs.org/)-based
 GitHub app. It is written in [TypeScript](https://www.typescriptlang.org) and
@@ -40,24 +66,17 @@ uses [React](https://reactjs.org/).
 This repository contains specific patches on top of the upstream
 `desktop/desktop` repository to support Linux usage.
 
-It also publishes [releases](https://github.com/Guys-Inc-Public/github-desktop-linux/releases) for various Linux distributions:
+It also publishes [releases](https://github.com/guysinc-forks/github-desktop-linux/releases) for various Linux distributions:
 
  - AppImage (`.AppImage`)
  - Debian (`.deb`)
  - RPM (`.rpm`)
 
-## Install on Debian / Ubuntu (recommended)
+## The APT repository
 
-Our **signed APT repository** installs `github-desktop` and keeps it up to date through `apt`:
-
-```sh
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://apt.guysinc.pub/guysinc-apt.gpg | sudo tee /etc/apt/keyrings/guysinc-apt.gpg > /dev/null
-echo "deb [signed-by=/etc/apt/keyrings/guysinc-apt.gpg] https://apt.guysinc.pub/github-desktop stable main" | sudo tee /etc/apt/sources.list.d/guysinc-github-desktop.list
-sudo apt update && sudo apt install github-desktop
-```
-
-The repository is GPG-signed; the fingerprint to verify is
+Our **signed APT repository** at [apt.guysinc.pub](https://apt.guysinc.pub) installs
+`github-desktop` and keeps it up to date through `apt`; the commands are in
+[Quickstart](#quickstart). The fingerprint to verify is
 `F45B B6D3 4D82 EF56 BB97 FBE0 F305 FB33 592B 46C8`.
 
 That is the *primary* key. `gpg --show-keys` will also list signing subkeys — one per
@@ -68,7 +87,7 @@ published here.
 ### How the repository is published
 
 The signing and publishing half of this pipeline is being extracted into
-**[archivist](https://github.com/Guys-Inc-Public/archivist)**, a separate MIT-licensed
+**[archivist](https://github.com/guysinc-public/archivist)**, a separate MIT-licensed
 project: point it at a directory of `.deb` files and get a signed apt repository on
 storage you own. If you have been putting loose `.deb` files on a Releases page because
 `reprepro`, GPG-in-CI and repository metadata looked like too much work, that is the
@@ -76,13 +95,13 @@ problem it exists to remove.
 
 It is **pre-release** — the design and the decision records are written down, the CLI is
 not finished, and this repository still publishes with `reprepro` directly today. Nothing
-to install yet; the [roadmap](https://github.com/Guys-Inc-Public/archivist/blob/main/docs/Roadmap.md)
+to install yet; the [roadmap](https://github.com/guysinc-public/archivist/blob/main/docs/Roadmap.md)
 is the honest status.
 
 ## Other distributions
 
 Prebuilt packages for every release are on the
-[Releases](https://github.com/Guys-Inc-Public/github-desktop-linux/releases) page —
+[Releases](https://github.com/guysinc-forks/github-desktop-linux/releases) page —
 `.deb`, `.rpm`, and `.AppImage` for x64 and ARM.
 
 ### Fedora / RHEL / openSUSE (`.rpm`)
