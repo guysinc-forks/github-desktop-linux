@@ -1,2 +1,3 @@
-# Default owners — automatically requested for review on all pull requests.
-* @Cam8863
+# No default owner. Clippy reviews every pull request and its approval merges (ADR 0025), so nobody is
+# asked by default. CJ is asked only for a decision or a permission, by hand, with the needs-cj label
+# (Branding-Standards ADR 0047, docs/reference/when-to-involve-cj.md).
